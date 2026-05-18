@@ -1,9 +1,10 @@
 public class ProblemOnLinkedList {
     public static void main(String[] args) {
       LinkedList list=new LinkedList();
-      list.addNode(30);
-      list.addNode(56);
-      list.addNode(70);
+       list.addNodeAtStart(70);
+      list.addNodeAtStart(30);
+      list.addNodeAtStart(56);
+     
       list.printLinkedList();  
     }
 }
@@ -36,5 +37,15 @@ class LinkedList{
         System.out.print(curr.data+" ");
         curr=curr.next;
        } 
+    }
+    public void addNodeAtStart(int data){
+     Node node=new Node(data);  
+     if(head==null){
+        head=node;
+     } 
+     else{
+        node.next=head;
+        head=node;
+     }
     }
 }
