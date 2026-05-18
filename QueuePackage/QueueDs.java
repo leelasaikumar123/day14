@@ -7,7 +7,12 @@ public class QueueDs {
         list.addNode(30);
         list.addNode(56);
         System.out.println("The Queue is ");
-        list.displayLinkedList();  
+        list.displayLinkedList(); 
+        System.out.println();
+        int queueLength=list.size();
+        for(int i=0;i<queueLength;i++){
+  System.out.println("Poped "+list.dequeue());
+        } 
 }
     }
 
@@ -41,5 +46,28 @@ class LinkedList{
                 curr=curr.next;
             }
             
+    }
+    public int size(){
+        int length=0;
+        Node curr=head;
+        while(curr != null){
+            length++;
+            curr=curr.next;
+        }
+        return length;
+    }
+    public int dequeue(){
+        if(head.next == null){
+            int data=head.data;
+            head=null;
+            return data;
+        }
+        else{
+            Node curr=head;
+            int data=curr.data;
+            head=head.next;
+            curr.next=null;
+    return data;
+        }
     }
 }
