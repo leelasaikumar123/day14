@@ -12,16 +12,21 @@ public class ProblemOnLinkedList {
     list.insertionOf40InBetween(40);
         System.out.println("After Inserting  40");
     list.printLinkedList();
-    System.out.println("After Deleting 40");
-    list.deleteNode40();
-    list.printLinkedList();
-    // System.out.println("Before Deletion");
+    // System.out.println("After Deleting 40");
+    // list.deleteNode40();
+    // list.printLinkedList();
+    // // System.out.println("Before Deletion");
     // list.searchForANode(30);
     //   list.printLinkedList();  
     //   System.out.println("Ater Deletion");
     //   list.removeStartNode();
     // list.removeEndNode();
     //   list.printLinkedList(); 
+    System.out.println("Before sorting");
+    list.printLinkedList();
+     System.out.println("After sorting");
+     list.sortLinkedList();
+    list.printLinkedList();   
     }
 }
 class Node{
@@ -197,4 +202,28 @@ curr=curr.next;
 }
         }
     }
+   public void sortLinkedList(){
+    if(head != null && head.next != null){
+     for(int i=0;i<getLinkedListSize()-1;i++){
+        Node curr=head;
+        while(curr.next !=null){
+            if(curr.data>curr.next.data){
+                int temp=curr.data;
+                curr.data=curr.next.data;
+                curr.next.data=temp;
+            }
+            curr=curr.next;
+        }
+     }
+    }
+   } 
+   public int getLinkedListSize(){
+    int size=0;
+    Node curr=head;
+    while(curr != null){
+        size++;
+    curr=curr.next;
+    }
+    return size;
+   }
 }
