@@ -1,10 +1,12 @@
 public class ProblemOnLinkedList {
     public static void main(String[] args) {
       LinkedList list=new LinkedList();
-       list.addNodeAtStart(70);
-      list.addNodeAtStart(30);
-      list.addNodeAtStart(56);
-     
+    //    list.addNodeAtStart(70);
+    //   list.addNodeAtStart(30);
+    //   list.addNodeAtStart(56); 
+    list.addNodeAtEnd(56);
+    list.addNodeAtEnd(30);
+    list.addNodeAtEnd(70);
       list.printLinkedList();  
     }
 }
@@ -47,5 +49,18 @@ class LinkedList{
         node.next=head;
         head=node;
      }
+    }
+    public void addNodeAtEnd(int data){
+        Node node=new Node(data);
+        if(head==null){
+        head=node;
+        }
+        else{
+            Node curr=head;
+            while(curr.next != null){
+                curr=curr.next;
+            }
+            curr.next=node;
+        }  
     }
 }
