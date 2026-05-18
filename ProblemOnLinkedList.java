@@ -10,7 +10,8 @@ public class ProblemOnLinkedList {
     System.out.println("Before Deletion");
       list.printLinkedList();  
       System.out.println("Ater Deletion");
-      list.removeStartNode();
+    //   list.removeStartNode();
+    list.removeEndNode();
       list.printLinkedList(); 
     }
 }
@@ -105,5 +106,17 @@ class LinkedList{
             head=head.next;
             curr.next=null;
         }
+    }
+    public void removeEndNode(){
+       if(head.next==null){
+            head=null;
+        }
+        else {
+            Node curr=head;
+            while(curr.next.next != null){
+                curr=curr.next;
+            }
+            curr.next=null;
+        } 
     }
 }
