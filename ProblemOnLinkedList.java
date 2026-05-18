@@ -12,6 +12,9 @@ public class ProblemOnLinkedList {
     list.insertionOf40InBetween(40);
         System.out.println("After Inserting  40");
     list.printLinkedList();
+    System.out.println("After Deleting 40");
+    list.deleteNode40();
+    list.printLinkedList();
     // System.out.println("Before Deletion");
     // list.searchForANode(30);
     //   list.printLinkedList();  
@@ -165,6 +168,33 @@ class LinkedList{
         }
         if(flag){
           System.out.println("The node you are looking for isnot available");
+        }
+    }
+    public void deleteNode40(){
+        Node curr=head;
+        if(head.data==40 ){
+            if(head.next != null){
+            head=head.next;
+            curr.next=null;
+            } 
+            else{
+                head=null;
+            }
+        }
+        else{
+while(curr.next != null){
+if(curr.next.data==40){
+    if(curr.next.next != null){
+        curr.next=curr.next.next;
+        break;
+    }
+    else{
+        curr.next=null;
+        break;
+    }
+}
+curr=curr.next;
+}
         }
     }
 }
