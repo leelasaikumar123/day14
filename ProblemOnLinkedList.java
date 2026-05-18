@@ -7,12 +7,13 @@ public class ProblemOnLinkedList {
     list.insertionOf30InBetween(56);
     list.insertionOf30InBetween(70);
     list.insertionOf30InBetween(30);
-    System.out.println("Before Deletion");
-      list.printLinkedList();  
-      System.out.println("Ater Deletion");
+    // System.out.println("Before Deletion");
+    list.searchForANode(30);
+    //   list.printLinkedList();  
+    //   System.out.println("Ater Deletion");
     //   list.removeStartNode();
-    list.removeEndNode();
-      list.printLinkedList(); 
+    // list.removeEndNode();
+    //   list.printLinkedList(); 
     }
 }
 class Node{
@@ -118,5 +119,19 @@ class LinkedList{
             }
             curr.next=null;
         } 
+    }
+    public void searchForANode(int data){
+        boolean flag=true;
+        Node curr=head;
+        while(curr != null){
+            if(curr.data==data){
+                flag=false;
+                System.out.println("Linked List contains the number you are searching for");
+            }
+            curr=curr.next;
+        }
+        if(flag){
+          System.out.println("The node you are looking for isnot available");
+        }
     }
 }
