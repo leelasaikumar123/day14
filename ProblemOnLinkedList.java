@@ -4,9 +4,10 @@ public class ProblemOnLinkedList {
     //    list.addNodeAtStart(70);
     //   list.addNodeAtStart(30);
     //   list.addNodeAtStart(56); 
-    list.addNodeAtEnd(56);
-    list.addNodeAtEnd(30);
-    list.addNodeAtEnd(70);
+    list.insertionOf30InBetween(56);
+    list.insertionOf30InBetween(70);
+    list.insertionOf30InBetween(30);
+    
       list.printLinkedList();  
     }
 }
@@ -62,5 +63,33 @@ class LinkedList{
             }
             curr.next=node;
         }  
+    }
+    public void insertionOf30InBetween(int data){
+         Node node=new Node(data);
+        if(head==null){
+        head=node;
+        return;
+        }
+     if(data==30){
+        Node cur1=head;
+    Node cur2=head;
+    while(cur1 != null && cur1.data != 56){
+      cur1=cur1.next;
+      
+    }
+    while( cur2 != null && cur2.data != 70 ){
+      cur2=cur2.next;
+    }
+    node.next=cur2;
+    cur1.next=node;
+    return;
+     }
+     if(head !=null){
+             Node curr=head;
+            while(curr.next != null){
+                curr=curr.next;
+            }
+            curr.next=node;
+     }
     }
 }
