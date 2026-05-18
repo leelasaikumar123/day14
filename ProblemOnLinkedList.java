@@ -7,8 +7,13 @@ public class ProblemOnLinkedList {
     list.insertionOf30InBetween(56);
     list.insertionOf30InBetween(70);
     list.insertionOf30InBetween(30);
+    System.out.println("Before Inserting  40");
+    list.printLinkedList();
+    list.insertionOf40InBetween(40);
+        System.out.println("After Inserting  40");
+    list.printLinkedList();
     // System.out.println("Before Deletion");
-    list.searchForANode(30);
+    // list.searchForANode(30);
     //   list.printLinkedList();  
     //   System.out.println("Ater Deletion");
     //   list.removeStartNode();
@@ -69,6 +74,34 @@ class LinkedList{
             }
             curr.next=node;
         }  
+    }
+        public void insertionOf40InBetween(int data){
+         Node node=new Node(data);
+        if(head==null){
+        head=node;
+        return;
+        }
+     if(data==40){
+        Node cur1=head;
+    Node cur2=head;
+    while(cur1 != null && cur1.data != 30){
+      cur1=cur1.next;
+      
+    }
+    while( cur2 != null && cur2.data != 70 ){
+      cur2=cur2.next;
+    }
+    node.next=cur2;
+    cur1.next=node;
+    return;
+     }
+     if(head !=null){
+             Node curr=head;
+            while(curr.next != null){
+                curr=curr.next;
+            }
+            curr.next=node;
+     }
     }
     public void insertionOf30InBetween(int data){
          Node node=new Node(data);
